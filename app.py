@@ -103,6 +103,7 @@ print(system_prompt[:600], "...")
 # Tool functions: both log via print AND append to a JSONL file in logs/.
 def _log(filename, record):
     record = {"timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"), **record}
+    LOG_DIR.mkdir(exist_ok=True)  # recreate it if logs/ was deleted while the app is running
     with open(LOG_DIR / filename, "a", encoding="utf-8") as f:
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
     return record
