@@ -10,7 +10,7 @@ sections = dict(re.findall(r"# %% \[(\w+)\]\n(.*?)(?=\n# %% \[|\Z)", (ROOT / "ap
 md, code = nbf.v4.new_markdown_cell, nbf.v4.new_code_cell
 cells = [
     md("# Cedar Path Tutoring: Agent-Powered Business Assistant\n"
-       "**EECE 503P/798S: Agentic Systems, C3 Assignment**\n\n"
+       "**EECE 503P/798S: Agentic Systems, C3 Assignment**  \n**Author:** Karim Assi\n\n"
        "An agent for a fictional tutoring center in Beirut. It answers questions as **Lina**, the student "
        "advisor, routes each message (general question / lead collection / feedback), collects leads, logs "
        "feedback and unanswered questions through tool calls, reflects on its own draft before replying, "

@@ -2,6 +2,8 @@
 
 EECE 503P/798S Agentic Systems, C3 Assignment.
 
+**Author:** Karim Assi
+
 **🎥 Demo video:** [Watch on Google Drive](https://drive.google.com/file/d/10DH_KlQeKttiBwaD1JlBqbVfoQHX6ije/view?usp=sharing)
 
 A chatbot for **Cedar Path Tutoring**, a fictional tutoring and exam-prep center in Beirut (grades 7-12).
