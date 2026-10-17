@@ -9,6 +9,25 @@ The agent, **Lina**, answers questions from the business documents, routes every
 handling path, collects leads, logs feedback and unanswered questions through tool calls, checks its own
 draft before replying, and runs in a Gradio UI.
 
+## Assignment checklist
+
+| Requirement | Where | Verified |
+|---|---|---|
+| `business_summary.txt` (a few paragraphs) | `me/business_summary.txt` | Name, mission, services and prices, team, value proposition, contact |
+| `about_business.pdf` | `me/about_business.pdf` | The same identity in more detail, plus policies |
+| `business_agent.ipynb` | Repo root | Runs top to bottom with no errors; saved outputs come from a real API run |
+| Clearly labeled persona and instructions | Notebook cells **2a. PERSONA** and **2b. INSTRUCTIONS** (`PERSONA`, `INSTRUCTIONS`) | Kept as two separate variables, then combined into `system_prompt` |
+| Router: general question / lead collection / feedback | `route()` + `ROUTE_HANDLING` (notebook section 5) | 30/30 correct on a labeled test set; the keyword fallback takes over if the LLM call fails |
+| `record_customer_interest(email, name, message)` | Notebook section 3 | Prints and logs to `logs/leads.jsonl`, and rejects invalid emails |
+| `record_feedback(question)` | Notebook section 3 | Prints and logs to `logs/feedback.jsonl` |
+| MCP-style tool schemas | `MCP_TOOLS` (name, description, inputSchema, outputSchema) | Converted to the OpenAI tool format in `TOOLS` |
+| System prompt: stays in character, uses summary + PDF, logs unknowns, encourages leads | `system_prompt` (section 4) | See the test conversation in section 7 and the eval below |
+| Model call with chat history and tools; handles tool calls, otherwise returns text | `run_agent()` (section 7) | Uses `client.chat.completions.create`, the current form of `openai.ChatCompletion` (removed in openai v1.0) |
+| Gradio ChatInterface | `gr.ChatInterface` (section 8) and `app.py` | Launches locally, with an "Agent trace" panel |
+| API key in `.env`, not uploaded | `.env` is in `.gitignore`; `.env.example` shows the format | No key in the repo |
+| (Bonus) Reflection with logged draft and revised reply | `reflect()` (section 6) | Draft and revised reply go to `logs/reflections.jsonl` and the trace panel |
+| Video | Link at the top of this README | |
+
 ## Project structure
 
 ```
