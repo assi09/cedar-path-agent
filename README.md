@@ -2,7 +2,7 @@
 
 EECE 503P/798S Agentic Systems, C3 Assignment.
 
-**🎥 Demo video:** [Watch on Google Drive](https://drive.google.com/file/d/14MM2O5D-Y-TMOt3XSSjzU2tKD9TuoBVc/view?usp=sharing)
+**🎥 Demo video:** [Watch on Google Drive](https://drive.google.com/file/d/10DH_KlQeKttiBwaD1JlBqbVfoQHX6ije/view?usp=sharing)
 
 A chatbot for **Cedar Path Tutoring**, a fictional tutoring and exam-prep center in Beirut (grades 7-12).
 The agent, **Lina**, answers questions from the business documents, routes every message to the right
